@@ -1,3 +1,14 @@
+.DS_Store
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+.gitignore
+
 # Built application files
 *.apk
 *.aar
@@ -9,6 +20,9 @@
 
 # Java class files
 *.class
+
+# cocos2dx
+cocos2d/
 
 # Generated files
 bin/
@@ -38,6 +52,7 @@ captures/
 
 # IntelliJ
 *.iml
+.idea/
 .idea/workspace.xml
 .idea/tasks.xml
 .idea/gradle.xml
