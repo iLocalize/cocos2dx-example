@@ -1,3 +1,5 @@
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+
 #include "AIHelpConfig.h"
 #include "AIHelpSupport.h"
 
@@ -388,3 +390,5 @@ JNIEXPORT void JNICALL Java_net_aihelp_init_CallbackHelper_handleCocos2dxCallbac
 }
 
 }
+
+#endif
