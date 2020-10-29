@@ -58,6 +58,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
             "THIS IS YOUR APP DOMAIN",
             "THIS IS YOUR APP ID",
             "THIS IS YOUR DEFAULT LANGUAGE(OPTIONAL)");
+
     AIHelpSupport::setOnAIHelpInitializedCallback(AIHelp_onAIHelpInit);
 
     return true;

@@ -249,7 +249,7 @@ void AIHelpSupport::showOperation(OperationConfig operationConfig) {
 }
 
 void AIHelpSupport::updateUserInfo(AIHelpUserConfig userConfig) {
-    const char *sig = "(Lnet/aihelp/config/AIHelpUserConfig;)V";
+    const char *sig = "(Lnet/aihelp/config/UserConfig;)V";
     cocos2d::JniMethodInfo info;
     if (cocos2d::JniHelper::getStaticMethodInfo(info, supportClazzName, "updateUserInfo", sig)) {
         jobject config = getJavaUserConfig(userConfig);
@@ -360,11 +360,11 @@ extern "C" {
 JNIEXPORT void JNICALL Java_net_aihelp_init_CallbackHelper_handleCocos2dxCallback
         (JNIEnv *jniEnv, jclass clazz, jint type, jobjectArray objArray) {
 
-    if (type == 1001) {
+    if (type == 1001 && initCallBack) {
         initCallBack();
     } else {
         jobject element = jniEnv->GetObjectArrayElement(objArray, 0);
-        if (type == 1002) {
+        if (type == 1002 && networkCheckCallBack) {
             jstring netLog = NULL;
             const char *result = NULL;
             if (jniEnv->IsInstanceOf(element, jniEnv->FindClass("java/lang/String"))) {
@@ -376,7 +376,7 @@ JNIEXPORT void JNICALL Java_net_aihelp_init_CallbackHelper_handleCocos2dxCallbac
                 jniEnv->ReleaseStringUTFChars(netLog, result);
             }
         }
-        if (type == 1003) {
+        if (type == 1003 && unreadMsgCallback) {
             jclass cls = jniEnv->GetObjectClass(element);
             jint result = 0;
             if (jniEnv->IsInstanceOf(element, jniEnv->FindClass("java/lang/Integer"))) {
