@@ -15,25 +15,18 @@ public:
 	CREATE_FUNC(GameScene);
 
 	// modules
-	void showBotSupport(cocos2d::Ref *obj);
-	void showManualSupport(cocos2d::Ref *obj);
-	void showAllFAQSections(cocos2d::Ref *obj);
-	void showSingleSection(cocos2d::Ref *obj);
-	void showSingleFAQ(cocos2d::Ref *obj);
-	void showOperation(cocos2d::Ref *obj);
+	void getString(cocos2d::Ref *obj);
+	void evaluateString(cocos2d::Ref *obj);
+	void updateUserInfo(cocos2d::Ref *obj);
 
 	// configuration
-	void updateUserInfo(Ref *obj);
-	void resetUserInfo(Ref *obj);
-	void updateLanguage(Ref *obj);
+	void getPageString(Ref *obj);
+	void setScreentshotPageId(Ref *obj);
+	void showFloatingWindow(Ref *obj);
 
 	// others
-	void startUnreadMessageCountPolling(Ref *obj);
-	void setPushTokenAndPlatform(Ref *obj);
-	void setNetworkCheckHostAddress(Ref *obj);
-	void setUploadLogPath(Ref *obj);
-	void enableLogging(Ref *obj);
-	void getSDKVersion(Ref *obj);
+    void updateLanguage(Ref *obj);
+	void setLogEnable(Ref *obj);
 
 };
 

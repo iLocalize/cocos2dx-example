@@ -1,5 +1,5 @@
+#include <iLocalize/iLocalizeCocos2dx.h>
 #include "DemoScene.h"
-#include "AIHelp/AIHelpSupport.h"
 
 USING_NS_CC;
 
@@ -23,12 +23,12 @@ bool GameScene::init() {
 
     Color3B titleColor(82, 126, 250);
 
-    auto moduleTitle = Label::createWithSystemFont("Modules", "Consolas", 50);
+    auto moduleTitle = Label::createWithSystemFont("Basic", "Marker Felt", 50);
     moduleTitle->setPosition(Vec2(150, winSize_height - 70));
     moduleTitle->setColor(titleColor);
     addChild(moduleTitle);
 
-    auto configureTitle = Label::createWithSystemFont("Configuration", "Consolas", 50);
+    auto configureTitle = Label::createWithSystemFont("Screenshot", "Consolas", 50);
     configureTitle->setPosition(Vec2(450, winSize_height - 70));
     configureTitle->setColor(titleColor);
     addChild(configureTitle);
@@ -42,236 +42,115 @@ bool GameScene::init() {
     logo->setPosition(Vec2(450, 160));
     this->addChild(logo, 0);
 
-    // ================================= Modules =================================
+    // ================================= Basic Functions =================================
 
-    auto menuItemBot = MenuItemFont::create("Robot",
-                                            CC_CALLBACK_1(GameScene::showBotSupport, this));
-    menuItemBot->setPosition(Vec2(150, 450));
-    menuItemBot->setColor(Color3B(51, 51, 51));
+    auto getString = MenuItemFont::create("getString",
+                                            CC_CALLBACK_1(GameScene::getString, this));
+    getString->setPosition(Vec2(150, 450));
+    getString->setColor(Color3B(51, 51, 51));
 
-    auto menuItemManual = MenuItemFont::create("Manual",
-                                               CC_CALLBACK_1(GameScene::showManualSupport, this));
-    menuItemManual->setPosition(Vec2(150, 380));
-    menuItemManual->setColor(Color3B(51, 51, 51));
+    auto evaluateString = MenuItemFont::create("evaluateString",
+                                               CC_CALLBACK_1(GameScene::evaluateString, this));
+    evaluateString->setPosition(Vec2(150, 380));
+    evaluateString->setColor(Color3B(51, 51, 51));
 
-    auto menuItemAllSections = MenuItemFont::create("All Sections",
-                                                    CC_CALLBACK_1(GameScene::showAllFAQSections,
+    auto updateUserInfo = MenuItemFont::create("updateUserInfo",
+                                                    CC_CALLBACK_1(GameScene::updateUserInfo,
                                                                   this));
-    menuItemAllSections->setPosition(Vec2(150, 310));
-    menuItemAllSections->setColor(Color3B(51, 51, 51));
+    updateUserInfo->setPosition(Vec2(150, 310));
+    updateUserInfo->setColor(Color3B(51, 51, 51));
 
-    auto menuItemSingle = MenuItemFont::create("Single Section",
-                                               CC_CALLBACK_1(GameScene::showSingleSection, this));
-    menuItemSingle->setPosition(Vec2(150, 240));
-    menuItemSingle->setColor(Color3B(51, 51, 51));
+    // ================================= Basic Functions =================================
 
-    auto menuItemSingleFAQ = MenuItemFont::create("Single FAQ",
-                                                  CC_CALLBACK_1(GameScene::showSingleFAQ, this));
-    menuItemSingleFAQ->setPosition(Vec2(150, 170));
-    menuItemSingleFAQ->setColor(Color3B(51, 51, 51));
+    // ================================= Screenshots =================================
 
-    auto menuItemOperation = MenuItemFont::create("Operation",
-                                                  CC_CALLBACK_1(GameScene::showOperation, this));
-    menuItemOperation->setPosition(Vec2(150, 100));
-    menuItemOperation->setColor(Color3B(51, 51, 51));
+    auto getPageString = MenuItemFont::create("getPageString",
+                                              CC_CALLBACK_1(GameScene::getPageString, this));
+    getPageString->setPosition(Vec2(450, 450));
+    getPageString->setColor(Color3B(51, 51, 51));
 
-    // ================================= Modules =================================
+    auto menuItemSetPageId = MenuItemFont::create("setScreenshotPageId",
+                                               CC_CALLBACK_1(GameScene::setScreentshotPageId, this));
+    menuItemSetPageId->setPosition(Vec2(450, 380));
+    menuItemSetPageId->setColor(Color3B(51, 51, 51));
 
-    // ================================= Configuration =================================
+    auto showFloating = MenuItemFont::create("showFloatingWindow",
+                                                CC_CALLBACK_1(GameScene::showFloatingWindow, this));
+    showFloating->setPosition(Vec2(450, 310));
+    showFloating->setColor(Color3B(51, 51, 51));
 
-    auto menuItemLogin = MenuItemFont::create("OnUserLogin",
-                                              CC_CALLBACK_1(GameScene::updateUserInfo, this));
-    menuItemLogin->setPosition(Vec2(450, 450));
-    menuItemLogin->setColor(Color3B(51, 51, 51));
+    // ================================= Screenshots =================================
 
-    auto menuItemLogout = MenuItemFont::create("OnUserLogout",
-                                               CC_CALLBACK_1(GameScene::resetUserInfo, this));
-    menuItemLogout->setPosition(Vec2(450, 380));
-    menuItemLogout->setColor(Color3B(51, 51, 51));
+    // ================================= Others =================================
 
-    auto goInternational = MenuItemFont::create("Going International",
-                                                CC_CALLBACK_1(GameScene::updateLanguage, this));
-    goInternational->setPosition(Vec2(450, 310));
-    goInternational->setColor(Color3B(51, 51, 51));
-
-    // ================================= Configuration =================================
-
-    // ================================= Configuration =================================
-
-    auto menuItemUnread = MenuItemFont::create("Unread Messages", CC_CALLBACK_1(
-            GameScene::startUnreadMessageCountPolling, this));
-    menuItemUnread->setPosition(Vec2(750, 450));
-    menuItemUnread->setColor(Color3B(51, 51, 51));
-
-    auto menuItemPush = MenuItemFont::create("Push",
-                                             CC_CALLBACK_1(GameScene::setPushTokenAndPlatform,
-                                                           this));
-    menuItemPush->setPosition(Vec2(750, 380));
-    menuItemPush->setColor(Color3B(51, 51, 51));
-
-    auto menuItemNetCheck = MenuItemFont::create("Network Check",
-                                                 CC_CALLBACK_1(
-                                                         GameScene::setNetworkCheckHostAddress,
-                                                         this));
-    menuItemNetCheck->setPosition(Vec2(750, 310));
-    menuItemNetCheck->setColor(Color3B(51, 51, 51));
-
-    auto menuItemUploadLog = MenuItemFont::create("Upload Log",
-                                                  CC_CALLBACK_1(GameScene::setUploadLogPath, this));
-    menuItemUploadLog->setPosition(Vec2(750, 240));
-    menuItemUploadLog->setColor(Color3B(51, 51, 51));
+    auto menuItemUploadLan = MenuItemFont::create("updateLanguage",
+                                                  CC_CALLBACK_1(GameScene::updateLanguage, this));
+    menuItemUploadLan->setPosition(Vec2(750, 450));
+    menuItemUploadLan->setColor(Color3B(51, 51, 51));
 
     auto menuItemLog = MenuItemFont::create("Enable Logging",
-                                            CC_CALLBACK_1(GameScene::enableLogging, this));
-    menuItemLog->setPosition(Vec2(750, 170));
+                                            CC_CALLBACK_1(GameScene::setLogEnable, this));
+    menuItemLog->setPosition(Vec2(750, 380));
     menuItemLog->setColor(Color3B(51, 51, 51));
 
-    auto menuItemVersion = MenuItemFont::create("SDK Version",
-                                                CC_CALLBACK_1(GameScene::getSDKVersion, this));
-    menuItemVersion->setPosition(Vec2(750, 100));
-    menuItemVersion->setColor(Color3B(51, 51, 51));
+    // ================================= Others =================================
 
-    // ================================= Configuration =================================
-
-    auto menu = Menu::create(menuItemBot, menuItemManual, menuItemAllSections, menuItemSingle,
-                             menuItemSingleFAQ, menuItemOperation, menuItemLogin, menuItemLogout,
-                             goInternational,
-                             menuItemUnread, menuItemPush, menuItemNetCheck, menuItemUploadLog,
-                             menuItemLog, menuItemVersion, NULL);
+    auto menu = Menu::create(getString, evaluateString, updateUserInfo,  getPageString, menuItemSetPageId,
+                             showFloating, menuItemUploadLan,
+                             menuItemLog, NULL);
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu);
 
     return true;
 }
 
-// ================================= Modules =================================
+// ================================= Basic Functions =================================
 
-void GameScene::showBotSupport(cocos2d::Ref *obj) {
-    ConversationConfig config = ConversationConfigBuilder()
-            .setConversationIntent(BOT_SUPPORT)
-            .setAlwaysShowHumanSupportButtonInBotPage(true)
-            .build();
-    AIHelpSupport::showConversation(config);
+void GameScene::getString(cocos2d::Ref *obj) {
+    CCLOGERROR("iLocalize Cocos2dx getPageString %s", iLocalizeCocos2dx::getString("Your Code").c_str());
 }
 
-void GameScene::showManualSupport(cocos2d::Ref *obj) {
-    ConversationConfig config = ConversationConfigBuilder()
-            .setConversationIntent(HUMAN_SUPPORT)
-            .setWelcomeMessage(
-                    "You can configure special welcome message for your end users at here.")
-            .build();
-    AIHelpSupport::showConversation(config);
+void GameScene::evaluateString(cocos2d::Ref *obj) {
+    iLocalizeCocos2dx::evaluateString("Your Code");
 }
-
-void GameScene::showAllFAQSections(cocos2d::Ref *obj) {
-    ConversationConfig faqConversationConfig = ConversationConfigBuilder()
-            .setConversationIntent(BOT_SUPPORT)
-            .setAlwaysShowHumanSupportButtonInBotPage(true)
-            .setWelcomeMessage("This is special configured welcome message for FAQ entrance.")
-            .build();
-    FAQConfig config = FAQConfigBuilder()
-            .setShowConversationMoment(ONLY_IN_ANSWER_PAGE)
-            .setConversationConfig(faqConversationConfig)
-            .build();
-    AIHelpSupport::showAllFAQSections(config);
-}
-
-void GameScene::showSingleSection(cocos2d::Ref *obj) {
-    ConversationConfig faqConversationConfig = ConversationConfigBuilder()
-            .setConversationIntent(HUMAN_SUPPORT)
-            .setWelcomeMessage("Hi, there, is there anything I can do for you?")
-            .build();
-    FAQConfig config = FAQConfigBuilder()
-            .setShowConversationMoment(AFTER_MARKING_UNHELPFUL)
-            .setConversationConfig(faqConversationConfig)
-            .build();
-    AIHelpSupport::showFAQSection("Section ID", config);
-}
-
-void GameScene::showSingleFAQ(cocos2d::Ref *obj) {
-    ConversationConfig faqConversationConfig = ConversationConfigBuilder()
-            .setConversationIntent(HUMAN_SUPPORT)
-            .setWelcomeMessage("Hi, there, is there anything I can do for you?")
-            .build();
-    FAQConfig config = FAQConfigBuilder()
-            .setShowConversationMoment(ALWAYS)
-            .setConversationConfig(faqConversationConfig)
-            .build();
-    AIHelpSupport::showSingleFAQ("FAQ ID", config);
-}
-
-void GameScene::showOperation(cocos2d::Ref *obj) {
-    ConversationConfig operationConversationConfig = ConversationConfigBuilder()
-            .setAlwaysShowHumanSupportButtonInBotPage(true)
-            .setWelcomeMessage("This is special configured welcome message for operation entrance.")
-            .build();
-    OperationConfig config = OperationConfigBuilder()
-            .setConversationTitle("Hi, there")
-            .setSelectIndex(2)
-            .setConversationConfig(operationConversationConfig)
-            .build();
-    AIHelpSupport::showOperation(config);
-}
-
-// ================================= Modules =================================
-
-
-// ================================= Configuration =================================
 
 void GameScene::updateUserInfo(cocos2d::Ref *obj) {
-    AIHelpUserConfig userConfig = AIHelpUserConfigBuilder()
-            .setUserId("UID")
-            .setServerId("SERVER ID")
-            .setUserName("USER NAME")
+    // This API is for phrase sampling, you can sample phrase by user tags.
+    // If you don't set this ,we will just ignore it.
+    iLocalizeCocos2dxUserConfig userConfig = iLocalizeCocos2dxUserConfigBuilder()
             .setUserTags("pay1,s1,vip2")
-            .setCustomData("{\"level\":34,\"total_recharge\":300,\"remaining\":56}")
             .build();
-    AIHelpSupport::updateUserInfo(userConfig);
+    iLocalizeCocos2dx::updateUserInfo(userConfig);
 }
 
-void GameScene::resetUserInfo(cocos2d::Ref *obj) {
-    AIHelpSupport::resetUserInfo();
+// ================================= Basic Functions =================================
+
+
+// ================================= Screenshots =================================
+
+void GameScene::getPageString(cocos2d::Ref *obj) {
+    CCLOGERROR("iLocalize Cocos2dx getPageString %s", iLocalizeCocos2dx::getPageString("PageId", "Code").c_str());
 }
 
-void GameScene::updateLanguage(cocos2d::Ref *obj) {
-    AIHelpSupport::updateSDKLanguage("ja");
+void GameScene::setScreentshotPageId(cocos2d::Ref *obj) {
+    iLocalizeCocos2dx::setScreenshotPageId("This is your page id, which should be same as getPageString().");
 }
 
-// ================================= Configuration =================================
+void GameScene::showFloatingWindow(cocos2d::Ref *obj) {
+    iLocalizeCocos2dx::showFloatingWindow();
+}
+
+// ================================= Screenshots =================================
 
 
 // ================================= Others =================================
 
-static void AIHelp_unreadMessageArrived(const int unreadCount) {
-    CCLOGERROR("AIHelp Cocos2dx Callback unreadMessageArrived %d", unreadCount);
+void GameScene::updateLanguage(cocos2d::Ref *obj) {
+    iLocalizeCocos2dx::updateLanguage("zh_CN");
 }
 
-void AIHelp_onNetworkCheckResult(const char * netLog) {
-    CCLOGERROR("AIHelp Cocos2dx Callback onNetworkCheckResult %s", netLog);
-}
-
-void GameScene::startUnreadMessageCountPolling(cocos2d::Ref *obj) {
-    AIHelpSupport::startUnreadMessageCountPolling(AIHelp_unreadMessageArrived);
-}
-
-void GameScene::setPushTokenAndPlatform(cocos2d::Ref *obj) {
-    AIHelpSupport::setPushTokenAndPlatform("YOUR PUSH TOKEN", FIREBASE);
-}
-
-void GameScene::setNetworkCheckHostAddress(cocos2d::Ref *obj) {
-    AIHelpSupport::setNetworkCheckHostAddress("aihelp.net", AIHelp_onNetworkCheckResult);
-}
-
-void GameScene::setUploadLogPath(cocos2d::Ref *obj) {
-    AIHelpSupport::setUploadLogPath("YOUR LOG PATH");
-}
-
-void GameScene::enableLogging(cocos2d::Ref *obj) {
-    AIHelpSupport::enableLogging(true);
-}
-
-void GameScene::getSDKVersion(cocos2d::Ref *obj) {
-    CCLOGERROR("AIHelp version is %s", AIHelpSupport::getSDKVersion().c_str());
+void GameScene::setLogEnable(cocos2d::Ref *obj) {
+    iLocalizeCocos2dx::setLogEnable(true);
 }
 
 // ================================= Others =================================

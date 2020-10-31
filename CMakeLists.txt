@@ -56,14 +56,14 @@ endif ()
 
 # add cross-platforms source files and header files 
 list(APPEND GAME_SOURCE
-        Classes/AIHelp/AIHelpConfig.cpp
-        Classes/AIHelp/AIHelpSupport.cpp
+        Classes/iLocalize/iLocalizeCocos2dx.cpp
+        Classes/iLocalize/iLocalizeConfig.cpp
         Classes/AppDelegate.cpp
         Classes/DemoScene.cpp
         )
 list(APPEND GAME_HEADER
-        Classes/AIHelp/AIHelpConfig.h
-        Classes/AIHelp/AIHelpSupport.h
+        Classes/iLocalize/iLocalizeCocos2dx.h
+        Classes/iLocalize/iLocalizeConfig.h
         Classes/AppDelegate.h
         Classes/DemoScene.h
         )
