@@ -1,18 +1,18 @@
-[<p align="center"><img src="https://cdn.aihelp.net/logo/logo.png" data-canonical-src="https://cdn.aihelp.net/logo/logo.png" width="200" height="70" align="center"/></p>](https://aihelp.net)
+[<p align="center"><img src="https://cdnimage.aihelp.net/FileService/UserFile/202010310653020595e8d8fcacb.png" data-canonical-src="https://cdnimage.aihelp.net/FileService/UserFile/202010310653020595e8d8fcacb.png" width="250" height="80" align="center"/></p>](https://console.ilocalize.net/)
 
 
 
-# AIHelp Cocos2dx Example
+# iLocalize Cocos2dx Example
 
 
 
-[![Download](https://api.bintray.com/packages/ai-help/maven/android-aihelp-aar/images/download.svg?version=2.1.2)](https://bintray.com/ai-help/maven/android-aihelp-aar/2.1.0/link) [![API](https://img.shields.io/badge/Android%20API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=16) [![API](https://img.shields.io/badge/iOS%20API-9.0%2B-brightgreen.svg?style=flat)]() [![License](https://img.shields.io/badge/License%20-Apache%202-337ab7.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+[![Download](https://api.bintray.com/packages/ilocalize/ilocalize/ilocalize-aar/images/download.svg)](https://bintray.com/ilocalize/ilocalize/ilocalize-aar/_latestVersion) [![API](https://img.shields.io/badge/Android%20API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=16) [![API](https://img.shields.io/badge/iOS%20API-9.0%2B-brightgreen.svg?style=flat)]() [![License](https://img.shields.io/badge/License%20-Apache%202-337ab7.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
 
 
-This repository contains all code examples of Cocos2dx project integrating with AIHelp latest SDK.
+This repository contains all code examples of Cocos2dx project integrating with iLocalize latest SDK.
 
-With this sample project, you can learn how to integrated AIHelp into a real project.
+With this sample project, you can learn how to integrated iLocalize into a real project.
 
 ***Note: To run the example project, you need to fill in SDK configuration in the AppDelegate.cpp.***
 
@@ -27,8 +27,7 @@ With this sample project, you can learn how to integrated AIHelp into a real pro
 
 ## Resources
 
-- Documentation: https://docs.aihelp.net/
-- Upgrading from v1.x: https://docs.aihelp.net/docs/upgrading/init/
+- Documentation: https://docs.ilocalize.net/
 
 
 
