@@ -1,0 +1,6 @@
+framework module iLocalizeSDK {
+  umbrella header "iLocalizeSDK.h"
+
+  export *
+  module * { export * }
+}
