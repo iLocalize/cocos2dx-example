@@ -42,8 +42,8 @@
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
 		B164AF41254D527E00537684 /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B164AF40254D527E00537684 /* libcocos2d iOS.a */; };
-		B1791469254D4605001B1765 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1791467254D4605001B1765 /* GameController.framework */; };
-		B179146B254D460D001B1765 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B179146A254D460C001B1765 /* MediaPlayer.framework */; };
+		B164AF4A254D553700537684 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1791467254D4605001B1765 /* GameController.framework */; };
+		B164AF4B254D554200537684 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B179146A254D460C001B1765 /* MediaPlayer.framework */; };
 		B179147E254D472E001B1765 /* DemoScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1791476254D472D001B1765 /* DemoScene.cpp */; };
 		B179147F254D472E001B1765 /* iLocalizeCocos2dx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B179147A254D472D001B1765 /* iLocalizeCocos2dx.cpp */; };
 		B1791480254D472E001B1765 /* iLocalizeConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B179147B254D472D001B1765 /* iLocalizeConfig.cpp */; };
@@ -166,8 +166,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B179146B254D460D001B1765 /* MediaPlayer.framework in Frameworks */,
-				B1791469254D4605001B1765 /* GameController.framework in Frameworks */,
+				B164AF4B254D554200537684 /* MediaPlayer.framework in Frameworks */,
+				B164AF4A254D553700537684 /* GameController.framework in Frameworks */,
 				294D0D641D0D56D500F7F5D4 /* CoreText.framework in Frameworks */,
 				ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */,
 				52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */,
