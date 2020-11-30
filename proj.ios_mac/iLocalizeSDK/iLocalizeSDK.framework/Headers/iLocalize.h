@@ -10,7 +10,7 @@
 #import "iLocalizeUserConfig.h"
 
 /* callback for download string complete */
-typedef void (*GGTranslationPreparedCallback)(BOOL success);
+typedef void (*GGTranslationPreparedCallback)(bool success);
 
 @interface iLocalize : NSObject
 
@@ -90,5 +90,7 @@ typedef void (*GGTranslationPreparedCallback)(BOOL success);
 + (void)evaluateStringWithCode:(NSString *)code;
 
 + (void)setUserConfig:(iLocalizeUserConfig *)config;
+
++ (void)evaluateAllStrings;
 @end
 

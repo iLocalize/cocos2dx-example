@@ -1,4 +1,5 @@
-#include "iLocalize/iLocalizeCocos2dx.h"
+//#include "iLocalize/iLocalizeCocos2dx.h"
+#include "iLocalizeCocos2dx.h"
 #include "DemoScene.h"
 
 USING_NS_CC;
