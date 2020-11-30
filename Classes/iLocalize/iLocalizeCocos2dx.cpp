@@ -154,6 +154,18 @@ void iLocalizeCocos2dx::evaluateString(string code) {
 #endif
 }
 
+void iLocalizeCocos2dx::evaluateAllStrings() {
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    cocos2d::JniMethodInfo minfo;
+    bool isValid = cocos2d::JniHelper::getStaticMethodInfo(
+            minfo, "net/ilocalize/init/iLocalize", "evaluateAllStrings", "()V");
+    if (isValid) {
+        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
+        minfo.env->DeleteLocalRef(minfo.classID);
+    }
+#endif
+}
+
 void iLocalizeCocos2dx::setScreenshotPageId(string pageId) {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     cocos2d::JniMethodInfo minfo;
@@ -210,7 +222,8 @@ void iLocalizeCocos2dx::updateUserInfo(iLocalizeCocos2dxUserConfig userConfig) {
 extern "C" {
 
 JNIEXPORT void JNICALL
-Java_net_ilocalize_init_iLocalize_onCocos2dxTranslationPrepared(JNIEnv *jniEnv, jclass clazz, jboolean isSuccess) {
+Java_net_ilocalize_init_iLocalize_onCocos2dxTranslationPrepared(JNIEnv *jniEnv, jclass clazz,
+                                                                jboolean isSuccess) {
     if (preparedCallback) {
         preparedCallback(isSuccess);
     }

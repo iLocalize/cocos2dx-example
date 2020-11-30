@@ -22,6 +22,7 @@ public:
     static void setLogEnable(bool enable = true);
     static void updateUserInfo(iLocalizeCocos2dxUserConfig config);
     static void evaluateString(string code);
+    static void evaluateAllStrings();
     static void setTranslationPreparedCallback(TranslationPreparedCallback callback);
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
