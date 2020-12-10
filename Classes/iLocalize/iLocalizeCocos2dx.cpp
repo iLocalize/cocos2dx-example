@@ -139,16 +139,18 @@ void iLocalizeCocos2dx::setTranslationPreparedCallback(TranslationPreparedCallba
 
 }
 
-void iLocalizeCocos2dx::evaluateString(string code) {
+void iLocalizeCocos2dx::evaluateString(string code, string stringContent) {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     cocos2d::JniMethodInfo minfo;
     bool isValid = cocos2d::JniHelper::getStaticMethodInfo(
             minfo, "net/ilocalize/init/iLocalize", "evaluateString",
-            "(Ljava/lang/String;)V");
+            "(Ljava/lang/String;Ljava/lang/String;)V");
     if (isValid) {
         jstring jcode = minfo.env->NewStringUTF(code.c_str());
-        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, jcode);
+        jstring jcontent = minfo.env->NewStringUTF(stringContent.c_str());
+        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, jcode, jcontent);
         minfo.env->DeleteLocalRef(jcode);
+        minfo.env->DeleteLocalRef(jcontent);
         minfo.env->DeleteLocalRef(minfo.classID);
     }
 #endif

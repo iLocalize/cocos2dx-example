@@ -21,7 +21,7 @@ public:
     static void updateLanguage(string language);
     static void setLogEnable(bool enable = true);
     static void updateUserInfo(iLocalizeCocos2dxUserConfig config);
-    static void evaluateString(string code);
+    static void evaluateString(string code, string stringContent);
     static void evaluateAllStrings();
     static void setTranslationPreparedCallback(TranslationPreparedCallback callback);
 
