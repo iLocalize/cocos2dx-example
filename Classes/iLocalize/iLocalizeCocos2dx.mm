@@ -62,6 +62,10 @@ void iLocalizeCocos2dx::evaluateString(string code) {
     [iLocalize evaluateStringWithCode:go2globalParseCString(code.c_str())];
 }
 
+void iLocalizeCocos2dx::evaluateAllStrings() {
+    [iLocalize evaluateAllStrings];
+}
+
 void iLocalizeCocos2dx::updateUserInfo(iLocalizeCocos2dxUserConfig userConfig) {
     NSString *nsuserTags = go2globalParseCString(userConfig.getUserTags().c_str());
     iLocalizeUserConfigBuilder *userBuilder = [[iLocalizeUserConfigBuilder alloc] init];

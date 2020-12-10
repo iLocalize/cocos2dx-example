@@ -1,4 +1,4 @@
-#include "iLocalize/iLocalizeCocos2dx.h"
+#include "iLocalizeCocos2dx.h"
 #include "AppDelegate.h"
 #include "DemoScene.h"
 

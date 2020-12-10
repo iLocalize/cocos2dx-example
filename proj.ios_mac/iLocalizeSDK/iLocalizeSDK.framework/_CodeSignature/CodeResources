@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/iLocalize.h</key>
 		<data>
-		p/ysPyPHso7sOyegtoF0dRM2GFo=
+		dSO8Nf7SUkW815KDDnBA0PSIk1o=
 		</data>
 		<key>Headers/iLocalizeSDK.h</key>
 		<data>
@@ -14,11 +14,11 @@
 		</data>
 		<key>Headers/iLocalizeUserConfig.h</key>
 		<data>
-		bCN8GHVvwRqPYkvlKxTYPYjPbg0=
+		0m1f1mkE1DL3wcDV/gLyXssQdy4=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		CEq0ahVLXh2rFwiEZofG5rVjCHg=
+		/5F6yPL9P37Eg6AEbUl1N+r04Kc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -31,11 +31,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			p/ysPyPHso7sOyegtoF0dRM2GFo=
+			dSO8Nf7SUkW815KDDnBA0PSIk1o=
 			</data>
 			<key>hash2</key>
 			<data>
-			5xVCMVucRlotizJ2sGvq0mQaDir4IVy2TH+0QhHo33o=
+			E/Ke9+9/k4NXv86rDgXAGY3Ku/FG+Swttg959BOXMyU=
 			</data>
 		</dict>
 		<key>Headers/iLocalizeSDK.h</key>
@@ -53,11 +53,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			bCN8GHVvwRqPYkvlKxTYPYjPbg0=
+			0m1f1mkE1DL3wcDV/gLyXssQdy4=
 			</data>
 			<key>hash2</key>
 			<data>
-			cf9HLxW8vNSymB1YlByoHkDly2sosdTGXJa+rk64dWw=
+			bAhWfAtY9j+vJ1lnK7gy6VWdDGYLWdMAohAITPPDNEA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
