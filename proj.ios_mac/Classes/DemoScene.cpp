@@ -112,7 +112,7 @@ void GameScene::getString(cocos2d::Ref *obj) {
 }
 
 void GameScene::evaluateString(cocos2d::Ref *obj) {
-    iLocalizeCocos2dx::evaluateString("Your Code");
+    iLocalizeCocos2dx::evaluateString("Your Code", "Your content");
 }
 
 void GameScene::updateUserInfo(cocos2d::Ref *obj) {

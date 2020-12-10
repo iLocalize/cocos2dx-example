@@ -1,0 +1,22 @@
+//中文简体zh-Hans
+"FeedbackSuggestions" = "反馈意见";
+"PleaseProvideYourThoughtsOnTheStringBelow" = "请对以下文本发表建议";
+"CurrentString" = "当前词条: ";
+"SeeOriginalString" = "参考原词条";
+"OriginalString" = "原词条:";
+"Hide" = "收起";
+"Rating" = "星级评分";
+"SuggestionsAlternatives" = "建议修改为";
+"Submit" = "提交";
+"ThisFunctionIsNotSupportedWhileInDebugMode" = "Debug 模式下不支持该功能";
+"ThankYouForYourFeedback" = "感谢您的反馈";
+"PleaseGiveThisStringAScoreAndOrASuggestion" = "请对整体词条进行评价或建议";
+"ThankYou" = "谢谢";
+"VeryDissatisfied" = "很不满意";
+"VerySatisfied" = "非常满意";
+"AnyOtherSuggestionsOrFeedbacksOptional" = "有其他建议或意见吗（可选）";
+"MaybeLater" = "下次再说";
+
+
+
+

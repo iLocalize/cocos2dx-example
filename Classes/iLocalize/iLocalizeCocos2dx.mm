@@ -58,8 +58,8 @@ void iLocalizeCocos2dx::setTranslationPreparedCallback(TranslationPreparedCallba
     [iLocalize setTranslationPreparedCallback:Go2Global_onTranslationPrepareCallback];
 }
 
-void iLocalizeCocos2dx::evaluateString(string code) {
-    [iLocalize evaluateStringWithCode:go2globalParseCString(code.c_str())];
+void iLocalizeCocos2dx::evaluateString(string code, string stringContent) {
+    [iLocalize evaluateStringWithCode:go2globalParseCString(code.c_str()) stringContent:go2globalParseCString(stringContent.c_str())];
 }
 
 void iLocalizeCocos2dx::evaluateAllStrings() {

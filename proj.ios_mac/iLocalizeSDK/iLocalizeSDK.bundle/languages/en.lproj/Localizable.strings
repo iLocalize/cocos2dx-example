@@ -1,0 +1,18 @@
+//英语en
+"FeedbackSuggestions" = "Feedback & Suggestions";
+"PleaseProvideYourThoughtsOnTheStringBelow" = "Please provide your thoughts on the string below";
+"CurrentString" = "Current String:";
+"SeeOriginalString" = "See Original String";
+"OriginalString" = "Original String:";
+"Hide" = "Hide";
+"Rating" = "Rating";
+"SuggestionsAlternatives" = "Suggestions/Alternatives";
+"Submit" = "Submit";
+"ThisFunctionIsNotSupportedWhileInDebugMode" = "This function is not supported while in Debug Mode";
+"ThankYouForYourFeedback" = "Thank you for your feedback";
+"PleaseGiveThisStringAScoreAndOrASuggestion" = "Please comment on this overall strings";
+"ThankYou" = "Thank you";
+"VeryDissatisfied" = "Very Dissatisfied";
+"VerySatisfied" = "Very Satisfied";
+"AnyOtherSuggestionsOrFeedbacksOptional" = "Any other suggestions or feedbacks? (Optional)";
+"MaybeLater" = "Maybe Later";

@@ -44,13 +44,13 @@
 		B160BA882575087C0065DAE4 /* iLocalizeCocos2dx.mm in Sources */ = {isa = PBXBuildFile; fileRef = B160BA852575087C0065DAE4 /* iLocalizeCocos2dx.mm */; };
 		B160BA892575087C0065DAE4 /* iLocalizeConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B160BA862575087C0065DAE4 /* iLocalizeConfig.cpp */; };
 		B160BA8A2575087C0065DAE4 /* iLocalizeCocos2dx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B160BA872575087C0065DAE4 /* iLocalizeCocos2dx.cpp */; };
-		B160BA8E257509630065DAE4 /* iLocalizeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B160BA8D257509630065DAE4 /* iLocalizeSDK.framework */; };
 		B160BA9325750B3D0065DAE4 /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2d iOS.a */; };
+		B160BBB2258249750065DAE4 /* iLocalizeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B160BBB1258249750065DAE4 /* iLocalizeSDK.framework */; };
+		B160BBB825824A770065DAE4 /* iLocalizeSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B160BBB725824A770065DAE4 /* iLocalizeSDK.bundle */; };
 		B164AF4A254D553700537684 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1791467254D4605001B1765 /* GameController.framework */; };
 		B164AF4B254D554200537684 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B179146A254D460C001B1765 /* MediaPlayer.framework */; };
 		B179147E254D472E001B1765 /* DemoScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1791476254D472D001B1765 /* DemoScene.cpp */; };
 		B1791481254D472E001B1765 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B179147D254D472D001B1765 /* AppDelegate.cpp */; };
-		B179148D254D4782001B1765 /* iLocalizeSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B179148B254D4782001B1765 /* iLocalizeSDK.bundle */; };
 		B1791494254D4A66001B1765 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B1791493254D4A66001B1765 /* logo.png */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -140,7 +140,8 @@
 		B160BA852575087C0065DAE4 /* iLocalizeCocos2dx.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = iLocalizeCocos2dx.mm; path = ../../../Classes/iLocalize/iLocalizeCocos2dx.mm; sourceTree = "<group>"; };
 		B160BA862575087C0065DAE4 /* iLocalizeConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = iLocalizeConfig.cpp; path = ../../../Classes/iLocalize/iLocalizeConfig.cpp; sourceTree = "<group>"; };
 		B160BA872575087C0065DAE4 /* iLocalizeCocos2dx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = iLocalizeCocos2dx.cpp; path = ../../../Classes/iLocalize/iLocalizeCocos2dx.cpp; sourceTree = "<group>"; };
-		B160BA8D257509630065DAE4 /* iLocalizeSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iLocalizeSDK.framework; sourceTree = "<group>"; };
+		B160BBB1258249750065DAE4 /* iLocalizeSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iLocalizeSDK.framework; sourceTree = "<group>"; };
+		B160BBB725824A770065DAE4 /* iLocalizeSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = iLocalizeSDK.bundle; sourceTree = "<group>"; };
 		B164AF40254D527E00537684 /* libcocos2d iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcocos2d iOS.a"; path = "../../../Library/Developer/Xcode/DerivedData/TestCoCosDemo-clkuvoquygqdgqbfmeixsqylrnai/Build/Products/Debug-iphoneos/libcocos2d iOS.a"; sourceTree = "<group>"; };
 		B1791467254D4605001B1765 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
 		B179146A254D460C001B1765 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
@@ -148,7 +149,6 @@
 		B1791476254D472D001B1765 /* DemoScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DemoScene.cpp; sourceTree = "<group>"; };
 		B179147C254D472D001B1765 /* DemoScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoScene.h; sourceTree = "<group>"; };
 		B179147D254D472D001B1765 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
-		B179148B254D4782001B1765 /* iLocalizeSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = iLocalizeSDK.bundle; sourceTree = "<group>"; };
 		B1791493254D4A66001B1765 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -171,7 +171,7 @@
 				294D0D641D0D56D500F7F5D4 /* CoreText.framework in Frameworks */,
 				ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */,
 				52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */,
-				B160BA8E257509630065DAE4 /* iLocalizeSDK.framework in Frameworks */,
+				B160BBB2258249750065DAE4 /* iLocalizeSDK.framework in Frameworks */,
 				B160BA9325750B3D0065DAE4 /* libcocos2d iOS.a in Frameworks */,
 				D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
@@ -350,8 +350,8 @@
 		B179148A254D4782001B1765 /* iLocalizeSDK */ = {
 			isa = PBXGroup;
 			children = (
-				B160BA8D257509630065DAE4 /* iLocalizeSDK.framework */,
-				B179148B254D4782001B1765 /* iLocalizeSDK.bundle */,
+				B160BBB725824A770065DAE4 /* iLocalizeSDK.bundle */,
+				B160BBB1258249750065DAE4 /* iLocalizeSDK.framework */,
 			);
 			path = iLocalizeSDK;
 			sourceTree = "<group>";
@@ -468,9 +468,9 @@
 				46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */,
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
 				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
+				B160BBB825824A770065DAE4 /* iLocalizeSDK.bundle in Resources */,
 				1AF87B891F6F781D007BE51C /* LaunchScreenBackground.png in Resources */,
 				B1791494254D4A66001B1765 /* logo.png in Resources */,
-				B179148D254D4782001B1765 /* iLocalizeSDK.bundle in Resources */,
 				46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */,
 				1AF87B881F6F781D007BE51C /* LaunchScreen.storyboard in Resources */,
 			);
