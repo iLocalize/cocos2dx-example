@@ -199,10 +199,12 @@ jobject getJavaUserConfig(iLocalizeCocos2dxUserConfig userConfig) {
     JNIEnv *jniEnv = cocos2d::JniHelper::getEnv();
     jclass clazz = jniEnv->FindClass("net/ilocalize/config/UserConfig$Builder");
     jobject builderObj = jniEnv->NewObject(clazz, jniEnv->GetMethodID(clazz, "<init>", "()V"));
+    jstring userId = cocos2d::JniHelper::getEnv()->NewStringUTF(userConfig.getUserId().c_str());
     jstring userTag = cocos2d::JniHelper::getEnv()->NewStringUTF(userConfig.getUserTags().c_str());
-    const char *sig = "(Ljava/lang/String;)Lnet/ilocalize/config/UserConfig;";
+    const char *sig = "(Ljava/lang/String;Ljava/lang/String;)Lnet/ilocalize/config/UserConfig;";
     jmethodID buildId = jniEnv->GetMethodID(clazz, "build", sig);
-    jobject javaUserConfig = jniEnv->CallObjectMethod(builderObj, buildId, userTag);
+    jobject javaUserConfig = jniEnv->CallObjectMethod(builderObj, buildId, userId, userTag);
+    jniEnv->DeleteLocalRef(userId);
     jniEnv->DeleteLocalRef(userTag);
     return javaUserConfig;
 }

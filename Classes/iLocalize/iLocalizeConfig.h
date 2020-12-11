@@ -14,20 +14,24 @@ using namespace std;
 /* iLocalizeCocos2dxUserConfig */
 class iLocalizeCocos2dxUserConfig {
 private:
+    string userId;
     string userTags;
 public:
-    iLocalizeCocos2dxUserConfig(string userTags);
+    iLocalizeCocos2dxUserConfig(string userId, string userTags);
+    string getUserId();
     string getUserTags();
 };
 
 /* iLocalizeCocos2dxUserConfigBuilder */
 class iLocalizeCocos2dxUserConfigBuilder {
 private:
+    string userId;
     string userTags;
 public:
     iLocalizeCocos2dxUserConfigBuilder(){};
     ~iLocalizeCocos2dxUserConfigBuilder(){};
     iLocalizeCocos2dxUserConfigBuilder(const iLocalizeCocos2dxUserConfigBuilder& rBuilder);
+    iLocalizeCocos2dxUserConfigBuilder setUserId(string userId);
     iLocalizeCocos2dxUserConfigBuilder setUserTags(string userTags);
     iLocalizeCocos2dxUserConfig build();
 };
