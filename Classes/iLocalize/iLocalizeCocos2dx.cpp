@@ -209,6 +209,26 @@ jobject getJavaUserConfig(iLocalizeCocos2dxUserConfig userConfig) {
     return javaUserConfig;
 }
 
+jobject getJavaOverflowConfig(iLCheckOverflowCocos2dxConfig overflowConfig) {
+    JNIEnv *jniEnv = cocos2d::JniHelper::getEnv();
+    jclass clazz = jniEnv->FindClass("net/ilocalize/config/CheckOverflowConfig$Builder");
+    jobject builderObj = jniEnv->NewObject(clazz, jniEnv->GetMethodID(clazz, "<init>", "()V"));
+    jstring pageId = cocos2d::JniHelper::getEnv()->NewStringUTF(overflowConfig.getPageId().c_str());
+    jstring stringId = cocos2d::JniHelper::getEnv()->NewStringUTF(overflowConfig.getStringId().c_str());
+    jstring stringContent = cocos2d::JniHelper::getEnv()->NewStringUTF(overflowConfig.getStringRealContent().c_str());
+    jfloat designWidth = overflowConfig.getMeasuredWidth();
+    jfloat designHeight = overflowConfig.getDesignHeight();
+    jfloat measureWidth = overflowConfig.getMeasuredWidth();
+    jfloat measureHeight = overflowConfig.getMeasuredHeight();
+    const char *sig = "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;FFFF)Lnet/ilocalize/config/CheckOverflowConfig;";
+    jmethodID buildId = jniEnv->GetMethodID(clazz, "build", sig);
+    jobject javaOverflowConfig = jniEnv->CallObjectMethod(builderObj, buildId, pageId, stringId, stringContent, designWidth, designHeight, measureWidth, measureHeight);
+    jniEnv->DeleteLocalRef(pageId);
+    jniEnv->DeleteLocalRef(stringId);
+    jniEnv->DeleteLocalRef(stringContent);
+    return javaOverflowConfig;
+}
+
 void iLocalizeCocos2dx::updateUserInfo(iLocalizeCocos2dxUserConfig userConfig) {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     const char *sig = "(Lnet/ilocalize/config/UserConfig;)V";
@@ -216,6 +236,20 @@ void iLocalizeCocos2dx::updateUserInfo(iLocalizeCocos2dxUserConfig userConfig) {
     if (cocos2d::JniHelper::getStaticMethodInfo(
             info, "net/ilocalize/init/iLocalize", "updateUserInfo", sig)) {
         jobject config = getJavaUserConfig(userConfig);
+        info.env->CallStaticVoidMethod(info.classID, info.methodID, config);
+        info.env->DeleteLocalRef(config);
+        info.env->DeleteLocalRef(info.classID);
+    }
+#endif
+}
+
+void iLocalizeCocos2dx::checkStringOverflow(iLCheckOverflowCocos2dxConfig overflowConfig) {
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    const char *sig = "(Lnet/ilocalize/config/CheckOverflowConfig;)V";
+    cocos2d::JniMethodInfo info;
+    if (cocos2d::JniHelper::getStaticMethodInfo(
+            info, "net/ilocalize/init/iLocalize", "checkStringOverflow", sig)) {
+        jobject config = getJavaOverflowConfig(overflowConfig);
         info.env->CallStaticVoidMethod(info.classID, info.methodID, config);
         info.env->DeleteLocalRef(config);
         info.env->DeleteLocalRef(info.classID);

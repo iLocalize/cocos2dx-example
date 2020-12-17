@@ -53,8 +53,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // init AIHelp
     iLocalizeCocos2dx::setLogEnable(true);
     iLocalizeCocos2dx::init(
-            "YOUR APP KEY",
-            "YOUR TARGET LANGUAGE",
+            "YOUR APPKEY",
+            "TARGET LANGUAGE",
             true,
             true);
 
