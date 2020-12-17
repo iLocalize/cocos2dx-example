@@ -75,4 +75,31 @@ void iLocalizeCocos2dx::updateUserInfo(iLocalizeCocos2dxUserConfig userConfig) {
     [iLocalize setUserConfig:userBuilder.build];
 }
 
+void iLocalizeCocos2dx::checkStringOverflow(iLCheckOverflowCocos2dxConfig config) {
+//    string pageId;
+//    string stringId;
+//    string stringRealContent;
+//    float designWidth;
+//    float designHeight;
+//    float measuredWidth;
+//    float measuredHeight;
+    NSString *pageId = go2globalParseCString(config.getPageId().c_str());
+    NSString *stringId = go2globalParseCString(config.getStringId().c_str());
+    NSString *stringRealContent = go2globalParseCString(config.getStringRealContent().c_str());
+    CGFloat designWidth = config.getDesignWidth();
+    CGFloat designHeight = config.getDesignHeight();
+    CGFloat measuredWidth = config.getMeasuredWidth();
+    CGFloat measuredHeight = config.getMeasuredHeight();
+    
+    iLCheckOverflowConfigBuilder *cBuilder = [[iLCheckOverflowConfigBuilder alloc] init];
+    cBuilder.pageId = pageId;
+    cBuilder.stringId = stringId;
+    cBuilder.stringRealContent = stringRealContent;
+    cBuilder.designWidth = designWidth;
+    cBuilder.designHeight = designHeight;
+    cBuilder.measuredWidth = measuredWidth;
+    cBuilder.measuredHeight = measuredHeight;
+    [iLocalize checkStringOverflow:cBuilder.build];
+}
+
 #endif

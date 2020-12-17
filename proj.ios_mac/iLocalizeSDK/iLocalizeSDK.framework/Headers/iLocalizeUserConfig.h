@@ -28,15 +28,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy,readonly)NSString  *pageId;
 @property (nonatomic, copy,readonly)NSString  *stringId;
 @property (nonatomic, copy,readonly)NSString  *stringRealContent;
-@property (nonatomic, assign,readonly)CGFloat noPaddingWidth;
-@property (nonatomic, assign,readonly)CGFloat noPaddingHeight;
-@property (nonatomic, copy,readonly)NSString  *fontAssetPath;
-@property (nonatomic, copy,readonly)NSString  *fontName;
-@property (nonatomic, assign,readonly)CGFloat  fontSize;
-@property (nonatomic, assign,readonly)CGFloat  letterSpacing;
-@property (nonatomic, assign,readonly)CGFloat  lineSpacing;
-@property (nonatomic, assign,readonly)BOOL  isBold;
-@property (nonatomic, assign,readonly)BOOL  isItalic;
+@property (nonatomic, assign,readonly)CGFloat designWidth;
+@property (nonatomic, assign,readonly)CGFloat designHeight;
+@property (nonatomic, assign,readonly)CGFloat measuredWidth;
+@property (nonatomic, assign,readonly)CGFloat measuredHeight;
 - (id) init NS_UNAVAILABLE;
 
 @end
@@ -45,15 +40,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy)NSString  *pageId;
 @property (nonatomic, copy)NSString  *stringId;
 @property (nonatomic, copy)NSString  *stringRealContent;
-@property (nonatomic, assign)CGFloat noPaddingWidth;
-@property (nonatomic, assign)CGFloat noPaddingHeight;
-@property (nonatomic, copy)NSString  *fontAssetPath;
-@property (nonatomic, copy)NSString  *fontName;
-@property (nonatomic, assign)CGFloat  fontSize;
-@property (nonatomic, assign)CGFloat  letterSpacing;
-@property (nonatomic, assign)CGFloat  lineSpacing;
-@property (nonatomic, assign)BOOL  isBold;
-@property (nonatomic, assign)BOOL  isItalic;
+@property (nonatomic, assign)CGFloat designWidth;
+@property (nonatomic, assign)CGFloat designHeight;
+@property (nonatomic, assign)CGFloat measuredWidth;
+@property (nonatomic, assign)CGFloat measuredHeight;
 - (iLCheckOverflowConfig *)build;
 
 @end

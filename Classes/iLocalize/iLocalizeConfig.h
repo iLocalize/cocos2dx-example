@@ -36,4 +36,49 @@ public:
     iLocalizeCocos2dxUserConfig build();
 };
 
+/* iLCheckOverflowCocos2dxConfig */
+class iLCheckOverflowCocos2dxConfig {
+private:
+    string pageId;
+    string stringId;
+    string stringRealContent;
+    float designWidth;
+    float designHeight;
+    float measuredWidth;
+    float measuredHeight;
+public:
+    iLCheckOverflowCocos2dxConfig(string pageId, string stringId, string stringRealContent, float designWidth, float designHeight, float measuredWidth, float measuredHeight);
+    string getPageId();
+    string getStringId();
+    string getStringRealContent();
+    float getDesignWidth();
+    float getDesignHeight();
+    float getMeasuredWidth();
+    float getMeasuredHeight();
+};
+
+/* iLCheckOverflowCocos2dxConfigBuilder */
+class iLCheckOverflowCocos2dxConfigBuilder {
+private:
+    string pageId;
+    string stringId;
+    string stringRealContent;
+    float designWidth;
+    float designHeight;
+    float measuredWidth;
+    float measuredHeight;
+public:
+    iLCheckOverflowCocos2dxConfigBuilder(){};
+    ~iLCheckOverflowCocos2dxConfigBuilder(){};
+    iLCheckOverflowCocos2dxConfigBuilder(const iLCheckOverflowCocos2dxConfigBuilder& rBuilder);
+    iLCheckOverflowCocos2dxConfigBuilder setPageId(string pageId);
+    iLCheckOverflowCocos2dxConfigBuilder setStringId(string stringId);
+    iLCheckOverflowCocos2dxConfigBuilder setStringRealContent(string stringRealContent);
+    iLCheckOverflowCocos2dxConfigBuilder setDesignWidth(float designWidth);
+    iLCheckOverflowCocos2dxConfigBuilder setDesignHeight(float designHeight);
+    iLCheckOverflowCocos2dxConfigBuilder setMeasuredWidth(float measuredWidth);
+    iLCheckOverflowCocos2dxConfigBuilder setMeasuredHeight(float measuredHeight);
+    iLCheckOverflowCocos2dxConfig build();
+};
+
 #endif /* Go2GlobalConfig_h */

@@ -24,6 +24,7 @@ public:
     static void evaluateString(string code, string stringContent);
     static void evaluateAllStrings();
     static void setTranslationPreparedCallback(TranslationPreparedCallback callback);
+    static void checkStringOverflow(iLCheckOverflowCocos2dxConfig config);
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     static string getPageString(string pageId, string code, string defaultString = "");
