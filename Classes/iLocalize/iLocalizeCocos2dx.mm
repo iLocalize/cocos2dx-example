@@ -76,13 +76,6 @@ void iLocalizeCocos2dx::updateUserInfo(iLocalizeCocos2dxUserConfig userConfig) {
 }
 
 void iLocalizeCocos2dx::checkStringOverflow(iLCheckOverflowCocos2dxConfig config) {
-//    string pageId;
-//    string stringId;
-//    string stringRealContent;
-//    float designWidth;
-//    float designHeight;
-//    float measuredWidth;
-//    float measuredHeight;
     NSString *pageId = go2globalParseCString(config.getPageId().c_str());
     NSString *stringId = go2globalParseCString(config.getStringId().c_str());
     NSString *stringRealContent = go2globalParseCString(config.getStringRealContent().c_str());
