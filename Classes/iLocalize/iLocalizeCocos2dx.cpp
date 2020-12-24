@@ -257,6 +257,17 @@ void iLocalizeCocos2dx::checkStringOverflow(iLCheckOverflowCocos2dxConfig overfl
 #endif
 }
 
+void iLocalizeCocos2dx::enableEvaluateFunction(bool enable) {
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    cocos2d::JniMethodInfo info;
+    if (cocos2d::JniHelper::getStaticMethodInfo(
+            info, "net/ilocalize/init/iLocalize", "enableEvaluateFunction", "(Z)V")) {
+        info.env->CallStaticVoidMethod(info.classID, info.methodID, enable);
+        info.env->DeleteLocalRef(info.classID);
+    }
+#endif
+}
+
 extern "C" {
 
 JNIEXPORT void JNICALL

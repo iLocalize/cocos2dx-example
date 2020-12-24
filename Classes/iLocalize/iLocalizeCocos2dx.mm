@@ -53,6 +53,10 @@ void iLocalizeCocos2dx::setLogEnable(bool enable) {
     [iLocalize setLogEnable:enable];
 }
 
+void iLocalizeCocos2dx::enableEvaluateFunction(bool enable) {
+    [iLocalize enableEvaluateFunction:enable];
+}
+
 void iLocalizeCocos2dx::setTranslationPreparedCallback(TranslationPreparedCallback callback) {
     s_translationPrepareCallback = callback;
     [iLocalize setTranslationPreparedCallback:Go2Global_onTranslationPrepareCallback];
