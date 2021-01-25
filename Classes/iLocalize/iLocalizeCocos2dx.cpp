@@ -216,7 +216,7 @@ jobject getJavaOverflowConfig(iLCheckOverflowCocos2dxConfig overflowConfig) {
     jstring pageId = cocos2d::JniHelper::getEnv()->NewStringUTF(overflowConfig.getPageId().c_str());
     jstring stringId = cocos2d::JniHelper::getEnv()->NewStringUTF(overflowConfig.getStringId().c_str());
     jstring stringContent = cocos2d::JniHelper::getEnv()->NewStringUTF(overflowConfig.getStringRealContent().c_str());
-    jfloat designWidth = overflowConfig.getMeasuredWidth();
+    jfloat designWidth = overflowConfig.getDesignWidth();
     jfloat designHeight = overflowConfig.getDesignHeight();
     jfloat measureWidth = overflowConfig.getMeasuredWidth();
     jfloat measureHeight = overflowConfig.getMeasuredHeight();
