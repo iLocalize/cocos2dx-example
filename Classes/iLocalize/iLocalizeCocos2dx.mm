@@ -88,6 +88,14 @@ void iLocalizeCocos2dx::checkStringOverflow(iLCheckOverflowCocos2dxConfig config
     CGFloat measuredWidth = config.getMeasuredWidth();
     CGFloat measuredHeight = config.getMeasuredHeight();
     
+    NSString *fontFamily = go2globalParseCString(config.getFontFamily().c_str());
+    CGFloat fontSize = config.getFontSize();
+    CGFloat lineSpacing = config.getLineSpacing();
+    NSInteger textAlign = config.getTextAlign();
+    BOOL isBold = config.getIsBold();
+    BOOL isItalic = config.getIsItalic();
+    BOOL isMultipleLine = config.getIsMultipleLine();
+    
     iLCheckOverflowConfigBuilder *cBuilder = [[iLCheckOverflowConfigBuilder alloc] init];
     cBuilder.pageId = pageId;
     cBuilder.stringId = stringId;
@@ -96,6 +104,14 @@ void iLocalizeCocos2dx::checkStringOverflow(iLCheckOverflowCocos2dxConfig config
     cBuilder.designHeight = designHeight;
     cBuilder.measuredWidth = measuredWidth;
     cBuilder.measuredHeight = measuredHeight;
+    
+    cBuilder.fontFamily = fontFamily;
+    cBuilder.fontSize = fontSize;
+    cBuilder.lineSpacing = lineSpacing;
+    cBuilder.textAlign = textAlign;
+    cBuilder.isBold = isBold;
+    cBuilder.isItalic = isItalic;
+    cBuilder.isMultipleLine = isMultipleLine;
     [iLocalize checkStringOverflow:cBuilder.build];
 }
 

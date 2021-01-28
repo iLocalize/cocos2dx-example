@@ -32,6 +32,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign,readonly)CGFloat designHeight;
 @property (nonatomic, assign,readonly)CGFloat measuredWidth;
 @property (nonatomic, assign,readonly)CGFloat measuredHeight;
+
+
+@property (nonatomic, copy,readonly)NSString  *fontFamily;
+@property (nonatomic, assign,readonly)CGFloat  fontSize;
+@property (nonatomic, assign,readonly)CGFloat  lineSpacing;
+@property (nonatomic, assign,readonly)NSInteger textAlign;
+@property (nonatomic, assign,readonly)BOOL isBold;
+@property (nonatomic, assign,readonly)BOOL isItalic;
+@property (nonatomic, assign,readonly)BOOL isMultipleLine;// 多行
+
 - (id) init NS_UNAVAILABLE;
 
 @end
@@ -44,6 +54,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign)CGFloat designHeight;
 @property (nonatomic, assign)CGFloat measuredWidth;
 @property (nonatomic, assign)CGFloat measuredHeight;
+
+@property (nonatomic, copy)NSString  *fontFamily;
+@property (nonatomic, assign)CGFloat  fontSize;
+@property (nonatomic, assign)CGFloat  lineSpacing;
+@property (nonatomic, assign)NSInteger textAlign;
+@property (nonatomic, assign)BOOL isBold;
+@property (nonatomic, assign)BOOL isItalic;
+@property (nonatomic, assign)BOOL isMultipleLine;// 多行
 - (iLCheckOverflowConfig *)build;
 
 @end
