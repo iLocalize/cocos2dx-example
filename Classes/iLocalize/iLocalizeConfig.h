@@ -46,8 +46,17 @@ private:
     float designHeight;
     float measuredWidth;
     float measuredHeight;
+    // Label-related attributes
+    string fontFamily;
+    float fontSize;
+    float lineSpacing;
+    int textAlign;
+    bool isBold;
+    bool isItalic;
+    bool isMultipleLine;
 public:
-    iLCheckOverflowCocos2dxConfig(string pageId, string stringId, string stringRealContent, float designWidth, float designHeight, float measuredWidth, float measuredHeight);
+    iLCheckOverflowCocos2dxConfig(string pageId, string stringId, string stringRealContent, float designWidth, float designHeight, float measuredWidth, float measuredHeight,
+                                  string fontFamily, float fontSize, float lineSpacing, int textAlign, bool isBold, bool isItalic, bool isMultipleLine);
     string getPageId();
     string getStringId();
     string getStringRealContent();
@@ -55,6 +64,13 @@ public:
     float getDesignHeight();
     float getMeasuredWidth();
     float getMeasuredHeight();
+    string getFontFamily();
+    float getFontSize();
+    float getLineSpacing();
+    int getTextAlign();
+    bool getIsBold();
+    bool getIsItalic();
+    bool getIsMultipleLine();
 };
 
 /* iLCheckOverflowCocos2dxConfigBuilder */
@@ -67,6 +83,14 @@ private:
     float designHeight;
     float measuredWidth;
     float measuredHeight;
+    // Label-related attributes
+    string fontFamily;
+    float fontSize;
+    float lineSpacing;
+    int textAlign;
+    bool isBold;
+    bool isItalic;
+    bool isMultipleLine;
 public:
     iLCheckOverflowCocos2dxConfigBuilder(){};
     ~iLCheckOverflowCocos2dxConfigBuilder(){};
@@ -78,6 +102,13 @@ public:
     iLCheckOverflowCocos2dxConfigBuilder setDesignHeight(float designHeight);
     iLCheckOverflowCocos2dxConfigBuilder setMeasuredWidth(float measuredWidth);
     iLCheckOverflowCocos2dxConfigBuilder setMeasuredHeight(float measuredHeight);
+    iLCheckOverflowCocos2dxConfigBuilder setFontFamily(string fontFamily);
+    iLCheckOverflowCocos2dxConfigBuilder setFontSize(float fontSize);
+    iLCheckOverflowCocos2dxConfigBuilder setLineSpacing(float lineSpacing);
+    iLCheckOverflowCocos2dxConfigBuilder setTextAlign(int textAlign);
+    iLCheckOverflowCocos2dxConfigBuilder setBold(bool isBold);
+    iLCheckOverflowCocos2dxConfigBuilder setItalic(bool isItalic);
+    iLCheckOverflowCocos2dxConfigBuilder setMultipleLine(bool isMultipleLine);
     iLCheckOverflowCocos2dxConfig build();
 };
 

@@ -93,11 +93,16 @@ bool GameScene::init() {
     menuItemLog->setPosition(Vec2(750, 380));
     menuItemLog->setColor(Color3B(51, 51, 51));
 
+    auto menuItemCheckOverflow = MenuItemFont::create("CheckOverflow",
+                                            CC_CALLBACK_1(GameScene::checkOverflow, this));
+    menuItemCheckOverflow->setPosition(Vec2(750, 310));
+    menuItemCheckOverflow->setColor(Color3B(51, 51, 51));
+
     // ================================= Others =================================
 
     auto menu = Menu::create(getString, evaluateString, updateUserInfo,  getPageString, menuItemSetPageId,
                              showFloating, menuItemUploadLan,
-                             menuItemLog, NULL);
+                             menuItemLog, menuItemCheckOverflow, NULL);
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu);
 
@@ -151,6 +156,26 @@ void GameScene::updateLanguage(cocos2d::Ref *obj) {
 
 void GameScene::setLogEnable(cocos2d::Ref *obj) {
     iLocalizeCocos2dx::setLogEnable(true);
+}
+
+void GameScene::checkOverflow(cocos2d::Ref *obj) {
+    iLCheckOverflowCocos2dxConfig overflowConfig = iLCheckOverflowCocos2dxConfigBuilder()
+            .setPageId("pageId")
+            .setStringId("stringId")
+            .setStringRealContent("This is your string content")
+            .setDesignWidth(445)
+            .setDesignHeight(445)
+            .setMeasuredWidth(560)
+            .setMeasuredHeight(560)
+            .setFontFamily("微软雅黑")
+            .setFontSize(18)
+            .setLineSpacing(10)
+            .setTextAlign(1)
+            .setBold(true)
+            .setItalic(false)
+            .setMultipleLine(true)
+            .build();
+    iLocalizeCocos2dx::checkStringOverflow(overflowConfig);
 }
 
 // ================================= Others =================================

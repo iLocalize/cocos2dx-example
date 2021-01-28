@@ -27,6 +27,7 @@ public:
 	// others
     void updateLanguage(Ref *obj);
 	void setLogEnable(Ref *obj);
+	void checkOverflow(Ref *obj);
 
 };
 

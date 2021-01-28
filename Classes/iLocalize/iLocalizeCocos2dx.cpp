@@ -214,18 +214,33 @@ jobject getJavaOverflowConfig(iLCheckOverflowCocos2dxConfig overflowConfig) {
     jclass clazz = jniEnv->FindClass("net/ilocalize/config/CheckOverflowConfig$Builder");
     jobject builderObj = jniEnv->NewObject(clazz, jniEnv->GetMethodID(clazz, "<init>", "()V"));
     jstring pageId = cocos2d::JniHelper::getEnv()->NewStringUTF(overflowConfig.getPageId().c_str());
-    jstring stringId = cocos2d::JniHelper::getEnv()->NewStringUTF(overflowConfig.getStringId().c_str());
-    jstring stringContent = cocos2d::JniHelper::getEnv()->NewStringUTF(overflowConfig.getStringRealContent().c_str());
+    jstring stringId = cocos2d::JniHelper::getEnv()->NewStringUTF(
+            overflowConfig.getStringId().c_str());
+    jstring stringContent = cocos2d::JniHelper::getEnv()->NewStringUTF(
+            overflowConfig.getStringRealContent().c_str());
     jfloat designWidth = overflowConfig.getDesignWidth();
     jfloat designHeight = overflowConfig.getDesignHeight();
     jfloat measureWidth = overflowConfig.getMeasuredWidth();
     jfloat measureHeight = overflowConfig.getMeasuredHeight();
-    const char *sig = "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;FFFF)Lnet/ilocalize/config/CheckOverflowConfig;";
+    jstring fontFamily = cocos2d::JniHelper::getEnv()->NewStringUTF(
+            overflowConfig.getFontFamily().c_str());
+    jfloat fontSize = overflowConfig.getFontSize();
+    jfloat lineSpacing = overflowConfig.getLineSpacing();
+    jint textAlign = overflowConfig.getTextAlign();
+    jboolean isBold = overflowConfig.getIsBold();
+    jboolean isItalic = overflowConfig.getIsItalic();
+    jboolean isMultipleLine = overflowConfig.getIsMultipleLine();
+    const char *sig = "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;FFFFLjava/lang/String;FFIZZZ)Lnet/ilocalize/config/CheckOverflowConfig;";
     jmethodID buildId = jniEnv->GetMethodID(clazz, "build", sig);
-    jobject javaOverflowConfig = jniEnv->CallObjectMethod(builderObj, buildId, pageId, stringId, stringContent, designWidth, designHeight, measureWidth, measureHeight);
+    jobject javaOverflowConfig = jniEnv->CallObjectMethod(builderObj, buildId, pageId, stringId,
+                                                          stringContent, designWidth, designHeight,
+                                                          measureWidth, measureHeight, fontFamily,
+                                                          fontSize, lineSpacing, textAlign,
+                                                          isBold, isItalic, isMultipleLine);
     jniEnv->DeleteLocalRef(pageId);
     jniEnv->DeleteLocalRef(stringId);
     jniEnv->DeleteLocalRef(stringContent);
+    jniEnv->DeleteLocalRef(fontFamily);
     return javaOverflowConfig;
 }
 
