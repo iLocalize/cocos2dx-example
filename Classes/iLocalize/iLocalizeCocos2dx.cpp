@@ -206,6 +206,8 @@ jobject getJavaUserConfig(iLocalizeCocos2dxUserConfig userConfig) {
     jobject javaUserConfig = jniEnv->CallObjectMethod(builderObj, buildId, userId, userTag);
     jniEnv->DeleteLocalRef(userId);
     jniEnv->DeleteLocalRef(userTag);
+    jniEnv->DeleteLocalRef(clazz);
+    jniEnv->DeleteLocalRef(builderObj);
     return javaUserConfig;
 }
 
@@ -241,6 +243,8 @@ jobject getJavaOverflowConfig(iLCheckOverflowCocos2dxConfig overflowConfig) {
     jniEnv->DeleteLocalRef(stringId);
     jniEnv->DeleteLocalRef(stringContent);
     jniEnv->DeleteLocalRef(fontFamily);
+    jniEnv->DeleteLocalRef(clazz);
+    jniEnv->DeleteLocalRef(builderObj);
     return javaOverflowConfig;
 }
 
